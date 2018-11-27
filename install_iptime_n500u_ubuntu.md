@@ -10,7 +10,7 @@
 #### 빌드 :
 -->
 To install the driver of ipTIME n500u to Ubuntu, 
-first download rtl8192du-master.zip
+first download rtl8192du-master.zip in this repository.
 ```
 $ unzip rtl8192du-master.zip
 $ cd rtl8192du-master
