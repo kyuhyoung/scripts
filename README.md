@@ -6,3 +6,6 @@ If ```DOWNLOADED=1``` is **uncommented**, it will assume that the installation f
 
 ### [git_readme_example.md]
 A template for git readme markdown file.
+
+### [install_iptime_n500u_ubuntu.md]
+installation description for ipTIME n500u for Ubuntu.
