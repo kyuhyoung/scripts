@@ -11,7 +11,7 @@ A template for git readme markdown file.
 Installation description for ipTIME n500u for Ubuntu.
 
 ### [.tmux.conf]
-Tmux cofiguration file. This file better be located as "~/.tmux.conf".
+Tmux cofiguration file **for tmux vesrion 2.1 or later**. This file better be located as "~/.tmux.conf".
 Don'forget to apply the configuration file.
 ```
 $ tmux source-file ~/.tmux.conf
