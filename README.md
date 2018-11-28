@@ -8,4 +8,7 @@ If ```DOWNLOADED=1``` is **uncommented**, it will assume that the installation f
 A template for git readme markdown file.
 
 ### [install_iptime_n500u_ubuntu.md]
-installation description for ipTIME n500u for Ubuntu.
+Installation description for ipTIME n500u for Ubuntu.
+
+### [.tmux.conf]
+Tmux cofiguration file. This file better be located as "~/.tmux.conf".
