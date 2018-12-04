@@ -22,8 +22,8 @@ sudo make install
 #sudo mv tmux-${VERSION} /usr/local/src
 #sudo killall -9 tmux
 wget https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.later.conf
-sudo mv .tmux.2.1.later.conf ~/
-tmux source-file ~/.tmux.2.1.later.conf
+sudo mv .tmux.2.1.later.conf ~/.tmux.conf
+tmux source-file ~/.tmux.conf
 
 # git, the last because of gedit.
 ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
