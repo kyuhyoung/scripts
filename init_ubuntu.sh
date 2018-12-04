@@ -49,6 +49,8 @@ tmux source-file ~/.tmux.conf
 # github, the last because of gedit.
 echo ""
 echo "========  github ================================================================"
+git config --global user.email "kyuhyoung@gmail.com"
+git config --global user.name "Kyuhyoung Choi"
 ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
