@@ -25,7 +25,7 @@ wget https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.later.
 sudo mv .tmux.2.1.later.conf ~/
 tmux source-file ~/.tmux.2.1.later.conf
 
-# git
+# git, the last because of gedit.
 ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
