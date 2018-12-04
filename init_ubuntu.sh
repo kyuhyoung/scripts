@@ -3,6 +3,7 @@
 # sh init_ubuntu.sh
 
 # vim
+sudo apt-get install vim
 cd ~/Downloads
 sudo rm -rf vi_setting
 git clone https://github.com/kyuhyoung/vi_setting.git
