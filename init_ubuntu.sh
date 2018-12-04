@@ -6,7 +6,9 @@
 cd ~/Downloads
 git clone https://github.com/kyuhyoung/vi_setting.git
 cd vi_setting
-mv * ~/
+mv .vimrc ~/
+mv .vim ~/
+cd ~/Downloads
 
 # fish
 sudo apt-get install fish
