@@ -3,6 +3,8 @@
 # sh init_ubuntu.sh
 
 # vim
+echo ""
+echo "========  vim ================================================================"
 sudo apt-get install vim
 cd ~/Downloads
 sudo rm -rf vi_setting
@@ -14,6 +16,8 @@ sudo mv .vim ~/
 cd ~/Downloads
 
 # fish
+echo ""
+echo "========  fish ================================================================"
 sudo apt-get install fish
 cd ~/Downloads
 curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/export.fish
@@ -21,6 +25,8 @@ sudo mkdir -p ~/.config/fish/functions
 sudo mv export.fish ~/.config/fish/functions/
 
 # tmux 2.6
+echo ""
+echo "========  tmux ================================================================"
 sudo apt-get -y remove tmux
 sudo apt-get -y install wget tar libevent-dev libncurses-dev
 cd ~/Downloads
@@ -40,7 +46,9 @@ curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.lat
 sudo mv .tmux.2.1.later.conf ~/.tmux.conf
 tmux source-file ~/.tmux.conf
 
-# git, the last because of gedit.
+# github, the last because of gedit.
+echo ""
+echo "========  github ================================================================"
 ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
