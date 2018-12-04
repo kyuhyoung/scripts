@@ -1,3 +1,7 @@
+# curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/init_ubuntu.sh
+# bash
+# sh init_ubuntu.sh
+
 # fish
 sudo apt-get install fish
 
