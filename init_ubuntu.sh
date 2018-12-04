@@ -2,6 +2,12 @@
 # bash
 # sh init_ubuntu.sh
 
+# vim
+cd ~/Downloads
+git clone https://github.com/kyuhyoung/vi_setting.git
+cd vi_setting
+mv * ~/
+
 # fish
 sudo apt-get install fish
 
