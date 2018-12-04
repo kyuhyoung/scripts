@@ -13,6 +13,6 @@ cd tmux-${VERSION}
 make
 sudo make install
 cd -
-sudo rm -rf /usr/local/src/tmux-\*
+sudo rm -rf /usr/local/src/tmux-*
 sudo mv tmux-${VERSION} /usr/local/src
 sudo killall -9 tmux
