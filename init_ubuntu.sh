@@ -16,3 +16,6 @@ sudo make install
 #sudo rm -rf /usr/local/src/tmux-*
 #sudo mv tmux-${VERSION} /usr/local/src
 #sudo killall -9 tmux
+wget https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.later.conf
+sudo mv .tmux.2.1.later.conf ~/
+source ~/.tmux.2.1.later.conf
