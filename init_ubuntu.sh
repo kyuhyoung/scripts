@@ -1,6 +1,6 @@
 # fish
 sudo apt-get install fish
-# tmux
+# tmux 2.6
 sudo apt-get -y remove tmux
 sudo apt-get -y install wget tar libevent-dev libncurses-dev
 cd ~/Downloads
