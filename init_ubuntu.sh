@@ -1,5 +1,6 @@
 # fish
 sudo apt-get install fish
+
 # tmux 2.6
 sudo apt-get -y remove tmux
 sudo apt-get -y install wget tar libevent-dev libncurses-dev
@@ -19,3 +20,9 @@ sudo make install
 wget https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.later.conf
 sudo mv .tmux.2.1.later.conf ~/
 tmux source-file ~/.tmux.2.1.later.conf
+
+# git
+ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+gedit ~/.ssh/id_rsa.pub
