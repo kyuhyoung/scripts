@@ -8,20 +8,24 @@ cd ~/Downloads
 sudo rm -rf vi_setting
 git clone https://github.com/kyuhyoung/vi_setting.git
 cd vi_setting
-mv .vimrc ~/
+sudo mv .vimrc ~/
 sudo rm -rf ~/.vim
-mv .vim ~/
+sudo mv .vim ~/
 cd ~/Downloads
 
 # fish
 sudo apt-get install fish
+cd ~/Downloads
+curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/export.fish
+sudo mkdir -p ~/.config/fish/functions
+sudo mv export.fish ~/.config/fish/functions/
 
 # tmux 2.6
 sudo apt-get -y remove tmux
 sudo apt-get -y install wget tar libevent-dev libncurses-dev
 cd ~/Downloads
 VERSION=2.6
-wget https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
+curl -O https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
 tar xf tmux-${VERSION}.tar.gz
 rm -f tmux-${VERSION}.tar.gz
 cd tmux-${VERSION}
@@ -32,7 +36,7 @@ sudo make install
 #sudo rm -rf /usr/local/src/tmux-*
 #sudo mv tmux-${VERSION} /usr/local/src
 #sudo killall -9 tmux
-wget https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.later.conf
+curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.later.conf
 sudo mv .tmux.2.1.later.conf ~/.tmux.conf
 tmux source-file ~/.tmux.conf
 
