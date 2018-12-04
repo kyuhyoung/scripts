@@ -18,4 +18,5 @@ sudo make install
 #sudo killall -9 tmux
 wget https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.later.conf
 sudo mv .tmux.2.1.later.conf ~/
+bash
 source ~/.tmux.2.1.later.conf
