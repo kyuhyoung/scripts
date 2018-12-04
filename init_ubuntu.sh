@@ -8,6 +8,7 @@ sudo rm -rf vi_setting
 git clone https://github.com/kyuhyoung/vi_setting.git
 cd vi_setting
 mv .vimrc ~/
+sudo rm -rf ~/.vim
 mv .vim ~/
 cd ~/Downloads
 
