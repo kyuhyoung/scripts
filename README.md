@@ -1,5 +1,8 @@
 # scripts
 
+### [init_ubuntu.sh]
+After installing ubuntu, then use this script to install vim, fish, tmux and github key.
+
 ### [install_opencv34.sh]
 installation script for OpenCV 3.4.0 and its extra modules.
 If ```DOWNLOADED=1``` is **uncommented**, it will assume that the installation files are already downloaded and uncompressed.
