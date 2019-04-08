@@ -1,3 +1,83 @@
+<!-- [![Image caption](/project.logo.jpg)](#) -->
+
+# README template from https://github.com/hinell/readme-bolierplate?ts=2
+[d]: #project
+**[INSTALL][i] | [USAGE][u] | [API][a] | [AUTHOR][auth] | [CONTRIBUTE][cpl] | [LICENSE][cpl] | [SUPPORT][ps]**
+
+> **KISS** - Keep it simple, stupid!
+
+```
+Quick usage example...
+```
+
+```
+...repeat until it gets clear.
+```
+## MOTIVATION
+Description of the problem that your module solves.
+
+## GETTING STARTED
+[gt]: #getting-started 'Getting started guide'
+
+A brief note on environment/machine/tools requisites
+
+### INSTALLATION
+[i]: #installation 'Installation guide' 
+
+```
+Installation/deployment example
+```
+
+### USAGE
+[u]: #usage 'Product usage'
+
+
+```
+Give more elaborate example here.
+```
+
+## API
+[a]: #api 'Module\'s API description'
+
+#### WARNING!:   
+Api description should be given here.
+```
+Code examples ...
+```
+
+## AUTHOR
+[auth]: #author 'Credits & author\'s contacts info '
+You can follow me on [twitter](https://twitter.com/biteofpie) or just [email](mailto:al.neodim@gmail.com) me.
+
+## ACKNOWLEDGMENTS
+[acc]: acknowledgments
+
+List of people and project that inspired creation of this one:
+
+- @PurpleBooth for his readme template posted [here](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+- @jxson for his [readme](https://gist.github.com/jxson/1784669) example as well.
+- Github guides for their precious [documenting your project](https://guides.github.com/features/wikis/#creating-a-readme) article concerning readme creation
+## CONTRIBUTION & LICENSE
+[cpl]:#contribution--license 'Contribution guide & license info'
+
+Check out (if any) <a href='/CONTRIBUTION'>contribution guide</a> or <a href='/LICENSE'>license</a> for more details.
+
+## PRODUCTION STATUS & SUPPORT
+[ps]: #production-status--support 'Production use disclaimer & support info'
+
+You should be aware that this project is supported solely by me and provided as is.
+<br>If you want to become a **patron** or offer me a **support** please [follow here][auth].
+
+<hr>
+
+Go back to the **[project description][d]**
+
+Copyright Â© 2017 Davronov Alexander 
+
+----
+----
+
+
 # Repo. of stereo camera calibration whose results are used as parameter files of the project "DroneVision / stereo_depth_and_detection"
 
 # Order
@@ -5,15 +85,15 @@
 ### [save_stereo_images] -> [stereo_calib_eyedea] -> [get_rectified_stereo]
 
 # [save_stereo_images]
-#### ¸ñÀû : 
-½ºÅ×·¹¿À Ä¶¸®ºê·¹ÀÌ¼ÇÀ» À§ÇØ ½ºÅ×·¹¿À Ä«¸Ş¶ó¿À ºÎÅÍ ** Ã¼½ºº¸µå°¡ Àû´çÈ÷ Àß ** º¸ÀÌ´Â ¿ŞÂÊ/¿À¸¥ÂÊ ÀÌ¹ÌÁöµéÀ» ÀúÀåÇÏ±â À§ÇÔ.
-#### ºôµå :
+#### ëª©ì  : 
+ìŠ¤í…Œë ˆì˜¤ ìº˜ë¦¬ë¸Œë ˆì´ì…˜ì„ ìœ„í•´ ìŠ¤í…Œë ˆì˜¤ ì¹´ë©”ë¼ì˜¤ ë¶€í„° ** ì²´ìŠ¤ë³´ë“œê°€ ì ë‹¹íˆ ì˜ ** ë³´ì´ëŠ” ì™¼ìª½/ì˜¤ë¥¸ìª½ ì´ë¯¸ì§€ë“¤ì„ ì €ì¥í•˜ê¸° ìœ„í•¨.
+#### ë¹Œë“œ :
 	$ make -f Makefile_save_stereo_images
-#### »ç¿ë ¿¹ :
+#### ì‚¬ìš© ì˜ˆ :
 See ``save_stereo_images.sh``<br/>
 	
 	$ ./save_stereo_images_exe -s_mm=24.95 -w=10 -h=7 -width=672 -height=376 -image_list=data/stereo_calib_khchoi.xml -show=1 -nr=1 -th_overlap=0.6 -sec_int=7 -dir_img=data
-#### ÀÎÀÚµé :
+#### ì¸ìë“¤ :
 -s_mm = chessboard grid side length in millimeters.<br/>
 -w = # of horizontal grids<br/>
 -h = # of vertical grids<br/>
@@ -27,15 +107,15 @@ See ``save_stereo_images.sh``<br/>
 -dir_img = folder to save the captured images. <br/>   
 
 # [stereo_calib_eyedea]
-#### ¸ñÀû : 
-ÀúÀåµÈ ¿ŞÂÊ/¿À¸¥ÂÊ ÀÌ¹ÌÁö ½Öµé·Î ºÎÅÍ ½ºÅ×·¹¿À Ä¶¸®ºê·¹ÀÌ¼ÇÀ» ¼öÇàÇÏ¿© intrinsic / extrinsic paramter µéÀ» ±¸ÇÏ°í ÀÌ¸¦ yml ÆÄÀÏ·Î ÀúÀåÇÔ.
-#### ºôµå :
+#### ëª©ì  : 
+ì €ì¥ëœ ì™¼ìª½/ì˜¤ë¥¸ìª½ ì´ë¯¸ì§€ ìŒë“¤ë¡œ ë¶€í„° ìŠ¤í…Œë ˆì˜¤ ìº˜ë¦¬ë¸Œë ˆì´ì…˜ì„ ìˆ˜í–‰í•˜ì—¬ intrinsic / extrinsic paramter ë“¤ì„ êµ¬í•˜ê³  ì´ë¥¼ yml íŒŒì¼ë¡œ ì €ì¥í•¨.
+#### ë¹Œë“œ :
 	$ make -f Makefile_stereo_calib
-#### »ç¿ë ¿¹ :
+#### ì‚¬ìš© ì˜ˆ :
 See ``stereo_calib_eyedea.sh``<br/>
 	
 	$ ./stereo_calib_eyedea_exe -s=24.95 -w=10 -h=7 -dir=data/zed_672x376/ -e=10,8 -input=data/stereo_calib_khchoi.xml
-#### ÀÎÀÚµé :
+#### ì¸ìë“¤ :
 -s = length of the side of the chessboard square in millimeters.<br/> 
 -w = # of grid in horizontal side. <br/>
 -h = # of grid in vertical side.  <br/>
@@ -44,15 +124,15 @@ See ``stereo_calib_eyedea.sh``<br/>
 -input = path to the xml file in which image file names are listed.<br/>
 
 # [get_rectified_stereo]
-#### ¸ñÀû : 
-Ä¶¸®ºê·¹ÀÌ¼Ç °á°ú ÆÄ¶ó¹ÌÅÍ ÆÄÀÏµé(¿ŞÂÊ/¿À¸¥ÂÊ intrinsic parameterµéÀÇ yml ÆÄÀÏ°ú, extrinsic paramterµéÀÇ yml ÆÄÀÏ)·Î ºÎÅÍ ÀÓÀÇÀÇ ¿ŞÂÊ/¿À¸¥ÂÊ ÀÌ¹ÌÁö ½Öµé¿¡ ´ëÇØ rectifiedµÈ ÀÌ¹ÌÁöµéÀ» ±¸ÇÏ°í ÀúÀåÇÔ.
-#### ºôµå :
+#### ëª©ì  : 
+ìº˜ë¦¬ë¸Œë ˆì´ì…˜ ê²°ê³¼ íŒŒë¼ë¯¸í„° íŒŒì¼ë“¤(ì™¼ìª½/ì˜¤ë¥¸ìª½ intrinsic parameterë“¤ì˜ yml íŒŒì¼ê³¼, extrinsic paramterë“¤ì˜ yml íŒŒì¼)ë¡œ ë¶€í„° ì„ì˜ì˜ ì™¼ìª½/ì˜¤ë¥¸ìª½ ì´ë¯¸ì§€ ìŒë“¤ì— ëŒ€í•´ rectifiedëœ ì´ë¯¸ì§€ë“¤ì„ êµ¬í•˜ê³  ì €ì¥í•¨.
+#### ë¹Œë“œ :
 	$ make -f Makefile_get_rectified_stereo
-#### »ç¿ë ¿¹ :
+#### ì‚¬ìš© ì˜ˆ :
 See ``get_rectified_stereo.sh``<br/>
 	
 	$ ./get_rectified_stereo_exe -int=data/zed_672x376/intrinsics.yml -ext=data/zed_672x376/extrinsics.yml -post=alfa_1 -input=data/stereo_calib_khchoi.xml -dir=data/zed_672x376/ -sec=1 -alfa=1
-#### ÀÎÀÚµé :
+#### ì¸ìë“¤ :
 -int = path to the left/right intrinsic parameter file <br/>
 -ext = path to the extrinsic parameter file <br/>
 -alfa = [0 ~ 1 or -1]. The scale factor for undistortion and rectification. Check the following post for the effect ( http://support.eyedea.co.kr:8200/browse/VIS-8?focusedCommentId=19304&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-19304 ) <br/>
@@ -62,7 +142,7 @@ See ``get_rectified_stereo.sh``<br/>
 -sec = display interval in seconds. <br/>
 
 # All in sequence
-#### »ç¿ë ¿¹ :
+#### ì‚¬ìš© ì˜ˆ :
 See ``all_in_sequence.sh``<br/>
 ```	
 CAMERA=ocams
@@ -81,7 +161,7 @@ ALPHA=0
 ./get_rectified_stereo_exe -input=$IMAGE_XML -int=$DIR/intrinsics.yml -ext=$DIR/extrinsics.yml -alfa=$ALPHA -post=alfa_$ALPHA -sec=1 -dir=rectified_result
 
 ```
-#### ÀÎÀÚµé :
+#### ì¸ìë“¤ :
 CAMERA = currently one of [zed, ocams] <br/>
 WIDTH = width of left or right camera image <br/>
 HEIGHT = width of left or right camera image <br/>
