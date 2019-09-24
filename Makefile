@@ -4,7 +4,23 @@
 RM 			= @rm -rfv
 CC = g++
 CFLAGS = -g -Wall
+
 SRCS = $(wildcard ./*.cpp)
+
+#SRCS = $(wildcard src/**/*.cpp)	# When source files are distributed in sub folders as following use this SRCS 
+#/root
+# | obj
+# | Makefile
+# | src/
+# | | dir1/
+# | |  | 1.cpp
+# | | dir2/
+# | |  | 2.cpp
+# | |  | dir3/
+# | |  |  | 3.cpp
+# | |  |  | 4.cpp
+# | | main.cpp
+
 #PROG = HelloWorld
 PROG      = $(notdir $(shell pwd))	## current foldername is target name
 
