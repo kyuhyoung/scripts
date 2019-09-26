@@ -19,5 +19,5 @@ Don'forget to apply the configuration file.
 ```
 $ tmux source-file ~/.tmux.conf
 ```
-### [create_.tmux.conf]
-Tmux cofiguration file.  Edit the file by uncommenting some lines according to your tmux version. This file better be located as 
+### [create_animated_gif_from_sequence_imagemagic.sh]
+With ImageMagic, create animated GIF file of image sequences under a directory. 
