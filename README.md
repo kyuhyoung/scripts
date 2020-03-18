@@ -13,11 +13,5 @@ A template for git readme markdown file.
 ### [install_iptime_n500u_ubuntu.md]
 Installation description for ipTIME n500u for Ubuntu.
 
-### [.tmux.conf]
-Tmux cofiguration file.  Edit the file by uncommenting some lines according to your tmux version. This file better be located as "~/.tmux.conf".
-Don'forget to apply the configuration file.
-```
-$ tmux source-file ~/.tmux.conf
-```
 ### [create_animated_gif_from_sequence_imagemagic.sh]
 With ImageMagic, create animated GIF file of image sequences under a directory. 
