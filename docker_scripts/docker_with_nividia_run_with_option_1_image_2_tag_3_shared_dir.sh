@@ -1,3 +1,4 @@
+# First of all, install Nvidia-docker as in https://hiseon.me/linux/ubuntu/install-docker/
 # For example,
 # sh docker_with_nividia_run_with_option_1_image_2_tag_3_shared_dir mmdetection latest ~/data
 # will call
