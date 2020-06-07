@@ -21,11 +21,43 @@ A step by step series of examples that tell you how to get a development env run
 
 Say what the step will be
 
+Terminal commands with console
+```console
+foo@bar:~$ apt-get install tmux
+foo@bar:~$ whoami
+foo
+```
+
+Terminal commands with bash
 ```bash
 foo@bar:~$ apt-get install tmux
 foo@bar:~$ whoami
 foo
 ```
+
+
+Terminal commands with sh
+```sh
+foo@bar:~$ apt-get install tmux
+foo@bar:~$ whoami
+foo
+```
+
+Terminal commands with zsh
+```zsh
+foo@bar:~$ apt-get install tmux
+foo@bar:~$ whoami
+foo
+```
+
+Terminal commands with fis
+```fish
+foo@bar:~$ apt-get install tmux
+foo@bar:~$ whoami
+foo
+```
+
+
 
 And repeat
 
