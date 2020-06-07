@@ -50,7 +50,7 @@ foo@bar:~$ whoami
 foo
 ```
 
-Terminal commands with fis
+Terminal commands with fish
 ```fish
 foo@bar:~$ apt-get install tmux
 foo@bar:~$ whoami
