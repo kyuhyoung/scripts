@@ -23,7 +23,7 @@ Say what the step will be
 
 ```bash
 foo@bar:~$ apt-get install tmux
-foo@bar:~$ tmux
+foo@bar:~$ whoami
 foo
 ```
 
