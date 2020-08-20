@@ -3,7 +3,7 @@
 ############################################################
 RM 			= @rm -rfv
 CC = g++
-CFLAGS = -g -Wall
+CFLAGS = -g -Wall -std=c++11
 
 SRCS = $(wildcard ./*.cpp)
 
