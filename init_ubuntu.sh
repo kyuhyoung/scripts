@@ -31,7 +31,8 @@ sudo apt-get -y remove tmux
 sudo apt-get -y install wget tar libevent-dev libncurses-dev
 cd ~/Downloads
 VERSION=2.6
-curl -O https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
+#curl -O https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
+wget https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
 tar xf tmux-${VERSION}.tar.gz
 rm -f tmux-${VERSION}.tar.gz
 cd tmux-${VERSION}
