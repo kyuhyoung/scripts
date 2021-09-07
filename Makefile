@@ -24,7 +24,13 @@ SRCS = $(wildcard ./*.cpp)
 #PROG = HelloWorld
 PROG      = $(notdir $(shell pwd))	## current foldername is target name
 
+############################################################
+#	for opencv 4 or later
+#OPENCV = `pkg-config opencv --cflags --libs`
+############################################################
+#	for opencv 3 or older
 OPENCV = `pkg-config opencv --cflags --libs`
+############################################################
 LIBS = $(OPENCV)
 
 $(PROG):$(SRCS)
