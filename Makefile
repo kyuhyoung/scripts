@@ -26,7 +26,7 @@ PROG      = $(notdir $(shell pwd))	## current foldername is target name
 
 ############################################################
 #	for opencv 4 or later
-#OPENCV = `pkg-config opencv --cflags --libs`
+#OPENCV = `pkg-config opencv4 --cflags --libs`
 ############################################################
 #	for opencv 3 or older
 OPENCV = `pkg-config opencv --cflags --libs`
