@@ -1,25 +1,46 @@
+#!/bin/sh
+
 # curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/init_ubuntu.sh
 # bash
 # sh init_ubuntu.sh
 
+
+echo ""
+echo "========  nvidia-docker 2 ================================================================"
+sudo ubuntu-drivers autoinstall
+
+##########################################################################
+######## reboot ##########################################################
+##########################################################################
+
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo apt-get update
+sudo apt-get install -y nvidia-docker2
+sudo systemctl restart docker
+sudo docker run --rm --gpus all ubuntu:18.04 nvidia-smi
+
+echo ""
+echo "========  apt-get packages ================================================================"
+sudo apt-get install -y gedit curl vim-gui-common vim-runtime fish git tmux docker.io
+sudo rm -rf ~/work/etc
+sudo mkdir -p ~/work/etc
+
 # vim
 echo ""
 echo "========  vim ================================================================"
-sudo apt-get install vim
-cd ~/Downloads
-sudo rm -rf vi_setting
-git clone https://github.com/kyuhyoung/vi_setting.git
+cd ~/work/etc
+sudo rm -rf /root/.vim*
+sudo git clone https://github.com/kyuhyoung/vi_setting.git
 cd vi_setting
-sudo mv .vimrc ~/
-sudo rm -rf ~/.vim
-sudo mv .vim ~/
-cd ~/Downloads
+sudo cp -r .vim* /root/
+sudo vim +'source /root/.vimrc' +qa
+sudo vim +'PlugInstall --sync' +qa
+
 
 # fish
 echo ""
 echo "========  fish ================================================================"
-sudo apt-get install fish
-cd ~/Downloads
+cd ~/work/etc
 curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/export.fish
 sudo mkdir -p ~/.config/fish/functions
 sudo mv export.fish ~/.config/fish/functions/
@@ -27,25 +48,34 @@ sudo mv export.fish ~/.config/fish/functions/
 # tmux 2.6
 echo ""
 echo "========  tmux ================================================================"
-sudo apt-get -y remove tmux
-sudo apt-get -y install wget tar libevent-dev libncurses-dev
-cd ~/Downloads
-VERSION=2.6
-#curl -O https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
-wget https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
-tar xf tmux-${VERSION}.tar.gz
-rm -f tmux-${VERSION}.tar.gz
-cd tmux-${VERSION}
-./configure
-make
-sudo make install
-#cd -
-#sudo rm -rf /usr/local/src/tmux-*
-#sudo mv tmux-${VERSION} /usr/local/src
-#sudo killall -9 tmux
-curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.later.conf
-sudo mv .tmux.2.1.later.conf ~/.tmux.conf
+cd ~/work/etc
+
+sudo git clone https://github.com/kyuhyoung/tmux.git
+cd tmux
+sudo cp -r .tmux* ~/
+sudo chown $(whoami):$(whoami) -R ~/.tmux
+cd ~/.tmux/plugins
+sudo git clone https://github.com/tmux-plugins/tpm.git 
+sudo git clone https://github.com/NHDaly/tmux-better-mouse-mode.git
+sudo git clone https://github.com/tmux-plugins/tmux-continuum.git
+sudo git clone https://github.com/tmux-plugins/tmux-resurrect.git
+sudo git clone https://github.com/tmux-plugins/tmux-sensible.git
 tmux source-file ~/.tmux.conf
+
+#sudo apt-get -y remove tmux
+#sudo apt-get -y install wget tar libevent-dev libncurses-dev
+#cd ~/Downloads
+#VERSION=2.6
+#wget https://github.com/tmux/tmux/releases/download/${VERSION}/tmux-${VERSION}.tar.gz
+#tar xf tmux-${VERSION}.tar.gz
+#rm -f tmux-${VERSION}.tar.gz
+#cd tmux-${VERSION}
+#./configure
+#make
+#sudo make install
+#curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/.tmux.2.1.later.conf
+#sudo mv .tmux.2.1.later.conf ~/.tmux.conf
+#tmux source-file ~/.tmux.conf
 
 # github, the last because of gedit.
 echo ""
