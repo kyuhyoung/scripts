@@ -14,14 +14,14 @@ sudo ubuntu-drivers autoinstall
 ##########################################################################
 
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-sudo apt-get update
+sudo apt update
 sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 sudo docker run --rm --gpus all ubuntu:18.04 nvidia-smi
 
 echo ""
 echo "========  apt-get packages ================================================================"
-sudo apt-get install -y gedit curl vim-gui-common vim-runtime fish git tmux docker.io
+sudo apt-get install -y wget gedit curl vim-gui-common vim-runtime fish git tmux docker.io
 sudo rm -rf ~/work/etc
 sudo mkdir -p ~/work/etc
 
@@ -77,6 +77,12 @@ tmux source-file ~/.tmux.conf
 #sudo mv .tmux.2.1.later.conf ~/.tmux.conf
 #tmux source-file ~/.tmux.conf
 
+echo ""
+echo "========  Google Chrome ================================================================"
+cd ~/work/etc
+sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
 # github, the last because of gedit.
 echo ""
 echo "========  github ================================================================"
@@ -86,3 +92,4 @@ ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 gedit ~/.ssh/id_rsa.pub
+
