@@ -5,7 +5,7 @@
 # sh init_ubuntu.sh khchoi@fxgear.net ##### for company
 # sh init_ubuntu.sh kyuhyoung@gmail.com ##### for private
 
-echo $@
+echo $0 $@
 if [ "$#" -ne 1 ] || ! [[ $1 == *"@"* ]]; then
   echo "Usage: $0 e-mail address" >&2
   exit 1
