@@ -40,7 +40,7 @@ sudo git clone https://github.com/kyuhyoung/vi_setting.git
 cd vi_setting
 sudo cp -r .vim* /root/
 sudo vi +'source /root/.vimrc' +qa
-sudo vi +'PlugInstall --sync' +qa
+sudo vi +'PlugInstall' +qa
 
 
 # fish
