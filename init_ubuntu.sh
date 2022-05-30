@@ -41,7 +41,7 @@ sudo vi +'PlugInstall --sync' +qa
 echo ""
 echo "========  fish ================================================================"
 cd ~/work/etc
-curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/export.fish
+sudo curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/export.fish
 sudo mkdir -p ~/.config/fish/functions
 sudo mv export.fish ~/.config/fish/functions/
 
