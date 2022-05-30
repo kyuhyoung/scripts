@@ -38,8 +38,8 @@ cd ~/work/etc
 sudo rm -rf /root/.vim*
 sudo git clone https://github.com/kyuhyoung/vi_setting.git
 cd vi_setting
-sudo cp -r .vim* /root/
-sudo vi +'source /root/.vimrc' +qa
+sudo cp -r .vim* ~/
+sudo vi +'source ~/.vimrc' +qa
 sudo vi +'PlugInstall' +qa
 
 
