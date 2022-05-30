@@ -33,8 +33,8 @@ sudo rm -rf /root/.vim*
 sudo git clone https://github.com/kyuhyoung/vi_setting.git
 cd vi_setting
 sudo cp -r .vim* /root/
-sudo vim +'source /root/.vimrc' +qa
-sudo vim +'PlugInstall --sync' +qa
+sudo vi +'source /root/.vimrc' +qa
+sudo vi +'PlugInstall --sync' +qa
 
 
 # fish
