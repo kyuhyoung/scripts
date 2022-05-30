@@ -21,7 +21,7 @@ sudo docker run --rm --gpus all ubuntu:18.04 nvidia-smi
 
 echo ""
 echo "========  apt-get packages ================================================================"
-sudo apt-get install -y wget gedit curl vim-gui-common vim-runtime fish git tmux docker.io
+sudo apt-get install -y wget gedit curl vim-gui-common vim-runtime fish git tmux
 sudo rm -rf ~/work/etc
 sudo mkdir -p ~/work/etc
 
