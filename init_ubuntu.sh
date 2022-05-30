@@ -2,8 +2,14 @@
 
 # curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/init_ubuntu.sh
 # bash
-# sh init_ubuntu.sh
+# sh init_ubuntu.sh khchoi@fxgear.net ##### for company
+# sh init_ubuntu.sh kyuhyoung@gmail.com ##### for private
 
+echo $@
+if [ "$#" -ne 1 ] || ! [[ $1 == *"@"* ]]; then
+  echo "Usage: $0 e-mail address" >&2
+  exit 1
+fi
 
 echo ""
 echo "========  nvidia-docker 2 ================================================================"
@@ -91,9 +97,11 @@ sudo apt-get install -y geeqie
 # github, the last because of gedit.
 echo ""
 echo "========  github ================================================================"
-git config --global user.email "kyuhyoung@gmail.com"
+#git config --global user.email "kyuhyoung@gmail.com"
+git config --global user.email $1
 git config --global user.name "Kyuhyoung Choi"
-ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
+#ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
+ssh-keygen -t rsa -C $1
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 gedit ~/.ssh/id_rsa.pub
