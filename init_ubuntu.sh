@@ -12,7 +12,9 @@ if [ "$#" -ne 1 ] || ! [[ $1 == *"@"* ]]; then
 fi
 
 echo ""
-echo "========  nvidia-docker 2 ================================================================"
+echo "========================================================"
+echo "========  nvidia-docker 2 =============================="
+echo "========================================================"
 sudo ubuntu-drivers autoinstall
 
 ##########################################################################
@@ -26,14 +28,19 @@ sudo systemctl restart docker
 sudo docker run --rm --gpus all ubuntu:18.04 nvidia-smi
 
 echo ""
-echo "========  apt-get packages ================================================================"
+echo "========================================================"
+echo "========  apt-get packages ============================="
+echo "========================================================"
 sudo apt-get install -y wget gedit curl vim vim-gui-common vim-runtime fish git tmux
 sudo rm -rf ~/work/etc
 sudo mkdir -p ~/work/etc
 
 # vim
 echo ""
-echo "========  vim ================================================================"
+echo "========================================================"
+echo "========  vim =========================================="
+echo "========================================================"
+
 cd ~/work/etc
 sudo rm -rf /root/.vim*
 sudo git clone https://github.com/kyuhyoung/vi_setting.git
@@ -45,7 +52,9 @@ sudo vi +'PlugInstall' +qa
 
 # fish
 echo ""
-echo "========  fish ================================================================"
+echo "========================================================"
+echo "========  fish ========================================="
+echo "========================================================"
 cd ~/work/etc
 sudo curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/export.fish
 sudo mkdir -p ~/.config/fish/functions
@@ -53,7 +62,9 @@ sudo mv export.fish ~/.config/fish/functions/
 
 # tmux 2.6
 echo ""
-echo "========  tmux ================================================================"
+echo "========================================================"
+echo "========  tmux ========================================="
+echo "========================================================"
 cd ~/work/etc
 
 sudo git clone https://github.com/kyuhyoung/tmux.git
@@ -84,19 +95,25 @@ tmux source-file ~/.tmux.conf
 #tmux source-file ~/.tmux.conf
 
 echo ""
-echo "========  Google Chrome ================================================================"
+echo "========================================================"
+echo "========  Google Chrome ================================"
+echo "========================================================"
 cd ~/work/etc
 sudo apt --fix-broken install
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 echo ""
-echo "========  some utils ================================================================"
+echo "========================================================"
+echo "========  some utils ==================================="
+echo "========================================================"
 sudo apt-get install -y geeqie
 
 # github, the last because of gedit.
 echo ""
-echo "========  github ================================================================"
+echo "========================================================"
+echo "========  github ======================================="
+echo "========================================================"
 #git config --global user.email "kyuhyoung@gmail.com"
 git config --global user.email $1
 git config --global user.name "Kyuhyoung Choi"
