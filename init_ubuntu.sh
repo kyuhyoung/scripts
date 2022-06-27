@@ -2,8 +2,8 @@
 
 # curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/init_ubuntu.sh
 # bash
-# sh init_ubuntu.sh khchoi@fxgear.net ##### for company
-# sh init_ubuntu.sh kyuhyoung@gmail.com ##### for private
+# bash init_ubuntu.sh khchoi@fxgear.net ##### for company
+# bash init_ubuntu.sh kyuhyoung@gmail.com ##### for private
 
 echo $0 $@
 if [ "$#" -ne 1 ] || ! [[ $1 == *"@"* ]]; then
