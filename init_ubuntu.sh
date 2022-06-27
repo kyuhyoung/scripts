@@ -31,7 +31,7 @@ echo ""
 echo "========================================================"
 echo "========  apt-get packages ============================="
 echo "========================================================"
-sudo apt-get install -y wget gedit curl vim vim-gui-common vim-runtime fish git tmux
+sudo apt-get install -y wget gedit curl vim vim-gui-common vim-runtime fish git tmux rename
 sudo rm -rf ~/work/ubuntu_init
 sudo mkdir -p ~/work/ubuntu_init
 
@@ -108,6 +108,18 @@ echo "========================================================"
 echo "========  some utils ==================================="
 echo "========================================================"
 sudo apt-get install -y geeqie
+
+echo ""
+echo "========================================================"
+echo "========  samba ============================="
+echo "========================================================"
+sudo apt-get install -y samba
+WHOAMI='/usr/bin/whoami'
+sudo smbpasswd -a ${WHOAMI}
+sudo cp /etc/samba/smb.conf /etc/samba/smb.conf_temp
+echo -e "[${WHOAMI}]\n comment = directory of {WHOAMI}\n path = /home/${WHAMI}\n valid users = ${WHAMI}\n writeable = yes\n read only = no\n create mode = 0777\n directory mode = 0777" >> /etc/samba/smb.conf
+sudo service smbd restart
+sudo chown -R ${WHOAMI}:${WHOAMI} /home/${WHOAMI}
 
 # github, the last because of gedit.
 echo ""
