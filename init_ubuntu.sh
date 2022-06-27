@@ -32,8 +32,8 @@ echo "========================================================"
 echo "========  apt-get packages ============================="
 echo "========================================================"
 sudo apt-get install -y wget gedit curl vim vim-gui-common vim-runtime fish git tmux
-sudo rm -rf ~/work/etc
-sudo mkdir -p ~/work/etc
+sudo rm -rf ~/work/ubuntu_init
+sudo mkdir -p ~/work/ubuntu_init
 
 # vim
 echo ""
@@ -41,7 +41,7 @@ echo "========================================================"
 echo "========  vim =========================================="
 echo "========================================================"
 
-cd ~/work/etc
+cd ~/work/ubuntu_init
 sudo rm -rf /root/.vim*
 sudo git clone https://github.com/kyuhyoung/vi_setting.git
 cd vi_setting
@@ -55,7 +55,7 @@ echo ""
 echo "========================================================"
 echo "========  fish ========================================="
 echo "========================================================"
-cd ~/work/etc
+cd ~/work/ubuntu_init
 sudo curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/export.fish
 sudo mkdir -p ~/.config/fish/functions
 sudo mv export.fish ~/.config/fish/functions/
@@ -65,7 +65,7 @@ echo ""
 echo "========================================================"
 echo "========  tmux ========================================="
 echo "========================================================"
-cd ~/work/etc
+cd ~/work/ubuntu_init
 
 sudo git clone https://github.com/kyuhyoung/tmux.git
 cd tmux
@@ -98,7 +98,7 @@ echo ""
 echo "========================================================"
 echo "========  Google Chrome ================================"
 echo "========================================================"
-cd ~/work/etc
+cd ~/work/ubuntu_init
 sudo apt --fix-broken install
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
