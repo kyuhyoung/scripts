@@ -109,18 +109,6 @@ echo "========  some utils ==================================="
 echo "========================================================"
 sudo apt-get install -y geeqie
 
-echo ""
-echo "========================================================"
-echo "========  samba ============================="
-echo "========================================================"
-sudo apt-get install -y samba
-WHOAMI='/usr/bin/whoami'
-sudo smbpasswd -a ${WHOAMI}
-sudo cp /etc/samba/smb.conf /etc/samba/smb.conf_temp
-echo -e "[${WHOAMI}]\n comment = directory of {WHOAMI}\n path = /home/${WHAMI}\n valid users = ${WHAMI}\n writeable = yes\n read only = no\n create mode = 0777\n directory mode = 0777" >> /etc/samba/smb.conf
-sudo service smbd restart
-sudo chown -R ${WHOAMI}:${WHOAMI} /home/${WHOAMI}
-
 # github, the last because of gedit.
 echo ""
 echo "========================================================"
@@ -135,3 +123,14 @@ eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 gedit ~/.ssh/id_rsa.pub
 
+echo ""
+echo "========================================================"
+echo "========  samba ============================="
+echo "========================================================"
+sudo apt-get install -y samba
+WHOAMI='/usr/bin/whoami'
+sudo smbpasswd -a ${WHOAMI}
+sudo cp /etc/samba/smb.conf /etc/samba/smb.conf_temp
+echo -e "[${WHOAMI}]\n comment = directory of {WHOAMI}\n path = /home/${WHAMI}\n valid users = ${WHAMI}\n writeable = yes\n read only = no\n create mode = 0777\n directory mode = 0777" >> /etc/samba/smb.conf
+sudo service smbd restart
+sudo chown -R ${WHOAMI}:${WHOAMI} /home/${WHOAMI}
