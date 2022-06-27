@@ -31,7 +31,7 @@ echo ""
 echo "========================================================"
 echo "========  apt-get packages ============================="
 echo "========================================================"
-sudo apt-get install -y wget gedit curl vim vim-gui-common vim-runtime fish git tmux rename
+sudo apt-get install -y wget gedit curl vim vim-gui-common vim-runtime fish git tmux rename geeqie
 sudo rm -rf ~/work/ubuntu_init
 sudo mkdir -p ~/work/ubuntu_init
 
@@ -103,11 +103,6 @@ sudo apt --fix-broken install
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-echo ""
-echo "========================================================"
-echo "========  some utils ==================================="
-echo "========================================================"
-sudo apt-get install -y geeqie
 
 # github, the last because of gedit.
 echo ""
