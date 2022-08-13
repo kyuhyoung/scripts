@@ -123,7 +123,7 @@ echo "========================================================"
 echo "========  samba ============================="
 echo "========================================================"
 sudo apt-get install -y samba
-WHOAMI='/usr/bin/whoami'
+WHOAMI="$(/usr/bin/whoami)"
 sudo smbpasswd -a ${WHOAMI}
 sudo cp /etc/samba/smb.conf /etc/samba/smb.conf_temp
 sudo echo -e "[${WHOAMI}]\n comment = directory of ${WHOAMI}\n path = /home/${WHOAMI}\n valid users = ${WHOAMI}\n writeable = yes\n read only = no\n create mode = 0777\n directory mode = 0777" >> /etc/samba/smb.conf
