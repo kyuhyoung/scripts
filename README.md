@@ -21,3 +21,22 @@ For example, to convert "bmp" files of directory "dir_1" into "png" files and th
 ```
 $ convert_images_of_2nd_ext_under_1st_dir_into_4th_ext_under_3rd_dir.sh dir_1 bmp dir_2 png
 ```
+
+### [list_path_of_directories_where_any_file_exists.sh]
+For example, let's say we have a directory structure as following.
+/dir_1/
+  f_1.txt
+  dir_1_1/
+    f_1.txt
+  dir_1_2/
+  dir_1_3/
+    dir_1_3_1/
+      f_1.txt
+We want the list of path as follwing:
+/dir_1/
+/dir_1/dir_1_1/
+/dir_1/dir_1_3/dir_1_3_1/
+Give the following command.
+```
+$ list_path_of_directories_where_any_file_exists.sh /dir_1
+```
