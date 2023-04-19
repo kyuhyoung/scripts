@@ -7,4 +7,6 @@ EXT_TO=$4
 #sudo rsync -av --include='*/' hand_video_bmp/ hand_video_png/
 sudo rsync -av --include='*/' ${DIR_FROM} ${DIR_TO}
 #find . -type f -name '*.bmp' -execdir sh -c 'sudo convert "$0" -quality 100 "${0%.bmp}.png" && sudo rm "$0"' {} \;
-find . -type f -name '*.${EXT_FROM}' -execdir sh -c 'sudo convert "$0" -quality 100 "${0%.${EXT_FROM}}.png" && sudo rm "$0"' {} \;
+#find . -type f -name '*.${EXT_FROM}' -execdir sh -c 'sudo convert "$0" -quality 100 "${0%.${EXT_FROM}}.png" && sudo rm "$0"' {} \;
+#find . -type f -name '*.bmp' | xargs -P 4 -I{} sh -c 'sudo convert "{}" -quality 100 "${0%.bmp}.png" && rm "{}"'
+find . -type f -name '*.${EXT_FROM}' | xargs -P 8 -I{} sh -c 'sudo convert "{}" -quality 100 "${0%.${EXT_FROM}}.png" && sudo rm "{}"'
