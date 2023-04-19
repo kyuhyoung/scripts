@@ -43,5 +43,5 @@ We want the list of path where one or more "txt' file exists as follwing:
 ```
 Give the following command.
 ```
-$ list_path_of_directories_where_any_file_exists.sh /dir_1
+$ list_path_of_directories_where_any_file_exists.sh /dir_1 txt
 ```
