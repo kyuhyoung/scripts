@@ -30,11 +30,12 @@ For example, let's say we have a directory structure as following.
   dir_1_1/
     f_1.txt
   dir_1_2/
+    f_1.bmp
   dir_1_3/
     dir_1_3_1/
       f_1.txt
 ```
-We want the list of path as follwing:
+We want the list of path where one or more "txt' file exists as follwing:
 ```
 /dir_1/
 /dir_1/dir_1_1/
