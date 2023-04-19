@@ -35,9 +35,11 @@ For example, let's say we have a directory structure as following.
       f_1.txt
 ```
 We want the list of path as follwing:
+```
 /dir_1/
 /dir_1/dir_1_1/
 /dir_1/dir_1_3/dir_1_3_1/
+```
 Give the following command.
 ```
 $ list_path_of_directories_where_any_file_exists.sh /dir_1
