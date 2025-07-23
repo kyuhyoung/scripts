@@ -31,7 +31,7 @@ echo ""
 echo "========================================================"
 echo "========  apt-get packages ============================="
 echo "========================================================"
-sudo apt-get install -y wget gedit curl vim vim-gui-common vim-runtime fish git tmux rename geeqie
+sudo apt-get install -y wget gedit curl vim vim-gui-common vim-runtime fish git rename geeqie
 sudo rm -rf ~/work/ubuntu_init
 sudo mkdir -p ~/work/ubuntu_init
 
@@ -66,6 +66,14 @@ echo "========================================================"
 echo "========  tmux ========================================="
 echo "========================================================"
 cd ~/work/ubuntu_init
+
+sudo apt install -y libevent-dev ncurses-dev build-essential
+sudo wget https://github.com/tmux/tmux/releases/download/3.4/tmux-3.4.tar.gz
+sudo tar -xzf tmux-3.4.tar.gz
+cd tmux-3.4
+sudo apt update && sudo apt install bison
+sudo ./configure && sudo make
+sudo make install
 
 sudo git clone https://github.com/kyuhyoung/tmux.git
 cd tmux
