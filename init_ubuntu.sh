@@ -29,6 +29,7 @@ sudo make
 sudo make install
 sudo make check
 
+: << 'END'
 echo ""
 echo "========================================================"
 echo "========  nvidia-docker 2 =============================="
@@ -45,6 +46,7 @@ sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 sudo docker run --rm --gpus all ubuntu:18.04 nvidia-smi
 sudo apt autoremove -y
+END
 
 echo ""
 echo "========================================================"
