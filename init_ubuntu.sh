@@ -103,7 +103,7 @@ echo "========================================================"
 echo "========  tmux ========================================="
 echo "========================================================"
 cd ~/work/ubuntu_init
-sudo apt install -y libevent-dev ncurses-dev build-essential
+sudo apt install -y libevent-dev ncurses-dev build-essential pipx
 sudo wget https://github.com/tmux/tmux/releases/download/3.4/tmux-3.4.tar.gz
 sudo tar -xzf tmux-3.4.tar.gz
 cd tmux-3.4
