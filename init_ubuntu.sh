@@ -27,16 +27,7 @@ echo ""
 echo "========================================================"
 echo "========  mosh ========================================="
 echo "========================================================"
-sudo apt-get install -y protobuf-compiler build-essential libncurses5-dev libncursesw5-dev libtinfo-dev pkg-config
-cd ~/work/ubuntu_init
-sudo wget https://github.com/mobile-shell/mosh/releases/download/mosh-1.4.0/mosh-1.4.0.tar.gz
-sudo tar xf mosh-1.4.0.tar.gz
-cd mosh-1.4.0
-sudo bash ./autogen.sh
-sudo bash ./configure
-sudo make
-sudo make install
-sudo make check
+sudo apt-get install -y mosh
 
 : << 'END'
 echo ""
