@@ -155,3 +155,14 @@ sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercont
 sudo chown $USER: ~/.vim
 sudo vi +'source ~/.vimrc' +qa
 sudo vi +'PlugInstall' +qa
+
+# Claude Code
+echo ""
+echo "========================================================"
+echo "========  Claude Code =================================="
+echo "========================================================"
+# Install Node.js (LTS)
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+# Install Claude Code
+sudo npm install -g @anthropic-ai/claude-code
