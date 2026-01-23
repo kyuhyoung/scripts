@@ -15,6 +15,13 @@ fi
 sudo rm -rf ~/work/ubuntu_init
 sudo mkdir -p ~/work/ubuntu_init
 
+# Disable interactive prompts for apt
+export DEBIAN_FRONTEND=noninteractive
+export NEEDRESTART_MODE=a
+# Configure needrestart to auto-restart services without asking
+sudo mkdir -p /etc/needrestart/conf.d
+echo "\$nrconf{restart} = 'a';" | sudo tee /etc/needrestart/conf.d/autorestart.conf > /dev/null
+
 echo ""
 echo "========================================================"
 echo "========  apt update & fix dependencies ================"
