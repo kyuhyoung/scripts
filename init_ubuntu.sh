@@ -17,6 +17,14 @@ sudo mkdir -p ~/work/ubuntu_init
 
 echo ""
 echo "========================================================"
+echo "========  apt update & fix dependencies ================"
+echo "========================================================"
+sudo apt-get update
+sudo apt-get -f install -y
+sudo apt-get upgrade -y
+
+echo ""
+echo "========================================================"
 echo "========  mosh ========================================="
 echo "========================================================"
 sudo apt-get install -y protobuf-compiler build-essential libncurses5-dev libncursesw5-dev libtinfo-dev pkg-config
