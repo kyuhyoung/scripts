@@ -45,6 +45,8 @@ sudo make
 sudo make install
 sudo ln -sf /usr/local/bin/mosh-server /usr/bin/mosh-server
 sudo ln -sf /usr/local/bin/mosh-client /usr/bin/mosh-client
+# Open UDP ports for mosh
+sudo ufw allow 60000:61000/udp 2>/dev/null || sudo iptables -A INPUT -p udp --dport 60000:61000 -j ACCEPT
 
 : << 'END'
 echo ""
