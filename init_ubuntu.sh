@@ -70,8 +70,9 @@ echo "========  fish ========================================="
 echo "========================================================"
 cd ~/work/ubuntu_init
 sudo curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/export.fish
-sudo mkdir -p ~/.config/fish/functions
+mkdir -p ~/.config/fish/functions
 sudo mv export.fish ~/.config/fish/functions/
+sudo chown -R $(whoami):$(whoami) ~/.config/fish
 
 echo ""
 echo "========================================================"
