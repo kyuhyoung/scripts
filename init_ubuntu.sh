@@ -7,7 +7,8 @@
 
 echo $0 $@
 if [ "$#" -ne 1 ] || ! [[ $1 == *"@"* ]]; then
-  echo "Usage: $0 e-mail address" >&2
+  echo "Usage: $0 <e-mail address>" >&2
+  echo "Example: $0 kyuhyoung@gmail.com" >&2
   exit 1
 fi
 
@@ -82,22 +83,24 @@ echo "========================================================"
 git config --global user.email $1
 git config --global user.name "Kyuhyoung Choi"
 #ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
-ssh-keygen -t rsa -C $1
+ssh-keygen -t rsa -C $1 -f ~/.ssh/id_rsa -N ""
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub
 
+: << 'END_SAMBA'
 echo ""
 echo "========================================================"
 echo "========  samba ============================="
 echo "========================================================"
 sudo apt-get install -y samba
 WHOAMI="$(/usr/bin/whoami)"
-sudo smbpasswd -a ${WHOAMI}
+echo -e "$2\n$2" | sudo smbpasswd -s -a ${WHOAMI}
 sudo cp /etc/samba/smb.conf /etc/samba/smb.conf_temp
 echo -e "[${WHOAMI}]\n comment = directory of ${WHOAMI}\n path = /home/${WHOAMI}\n valid users = ${WHOAMI}\n writeable = yes\n read only = no\n create mode = 0777\n directory mode = 0777" | sudo tee -a /etc/samba/smb.conf
 sudo service smbd restart
 sudo chown -R ${WHOAMI}:${WHOAMI} /home/${WHOAMI}
+END_SAMBA
 
 # tmux 3.4
 echo ""
