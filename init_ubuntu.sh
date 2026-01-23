@@ -93,6 +93,7 @@ echo "========================================================"
 git config --global user.email $1
 git config --global user.name "Kyuhyoung Choi"
 #ssh-keygen -t rsa -C "kyuhyhoung@gmail.com"
+rm -f ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
 ssh-keygen -t rsa -C $1 -f ~/.ssh/id_rsa -N ""
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa
