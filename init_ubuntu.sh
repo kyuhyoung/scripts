@@ -172,7 +172,7 @@ sudo git clone https://github.com/kyuhyoung/vi_setting.git
 cd vi_setting
 sudo cp -r .vim* ~/
 sudo curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-sudo chown $USER: ~/.vim
+sudo chown -R $USER: ~/.vim ~/.vimrc
 sudo vi +'source ~/.vimrc' +qa
 sudo vi +'PlugInstall' +qa
 
