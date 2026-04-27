@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # curl -O https://raw.githubusercontent.com/kyuhyoung/scripts/master/init_ubuntu.sh
 # bash
@@ -11,6 +11,18 @@ if [ "$#" -ne 1 ] || ! [[ $1 == *"@"* ]]; then
   echo "Example: $0 kyuhyoung@gmail.com" >&2
   exit 1
 fi
+
+# ---- 로그 + 에러 처리 셋업 -----------------------------------------------
+# - 매 실행마다 init_ubuntu.log 새로 생성 (덮어쓰기)
+# - 콘솔 + 로그 동시 출력, 라인 버퍼 flush (실시간)
+# - 어느 스텝이든 에러 발생 시 line/command 표시 후 즉시 중단
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOG="$SCRIPT_DIR/init_ubuntu.log"
+: > "$LOG"
+exec > >(stdbuf -oL tee "$LOG") 2>&1
+set -Eeo pipefail
+trap 'rc=$?; echo ""; echo "[ERROR] line $LINENO (exit $rc): $BASH_COMMAND" >&2; exit $rc' ERR
+echo "[$(date '+%F %T')] init_ubuntu.sh start  (log: $LOG)"
 
 sudo rm -rf ~/work/ubuntu_init
 sudo mkdir -p ~/work/ubuntu_init
