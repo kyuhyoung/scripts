@@ -45,3 +45,9 @@ Give the following command.
 ```
 $ list_path_of_directories_where_any_file_exists.sh /dir_1 txt
 ```
+
+### [register_my_public_key_to_remote_opt1_user_at_opt2_address_with_opt3_port.sh]
+Register my public key (```~/.ssh/id_ed25519.pub```) to a remote server's ```authorized_keys``` so that ssh to that server no longer asks for a password. It asks the remote password once (this time), and never again afterwards. The ```.ps1``` with the same name is the Windows PowerShell version taking the same arguments.
+```
+$ sh register_my_public_key_to_remote_opt1_user_at_opt2_address_with_opt3_port.sh kevin 192.168.2.50 1122
+```
