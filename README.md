@@ -51,3 +51,10 @@ Register my public key (```~/.ssh/id_ed25519.pub```) to a remote server's ```aut
 ```
 $ sh register_my_public_key_to_remote_opt1_user_at_opt2_address_with_opt3_port.sh kevin 192.168.2.50 1122
 ```
+
+### [register-key.sh] / [register-key.ps1]
+Hard-coded variant of the script above. Instead of taking the remote as arguments, it keeps the list of servers (with per-server port) inside the script, registers my public key to every one of them in a single run, and appends a timestamped record to ```register-key.log``` in the same folder. Edit the ```SERVERS``` list at the top, then just run it. ```.sh``` is for Ubuntu/Linux, ```.ps1``` is for Windows PowerShell.
+```
+$ bash register-key.sh
+PS> .\register-key.ps1
+```
